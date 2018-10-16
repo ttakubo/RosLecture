@@ -1,5 +1,5 @@
 <launch>
-  <arg name="model" default="/home/takubo/catkin_ws/src/sixdofarm/urdf/sixdofarm.urdf" />
+  <arg name="model" default="/home/takubo/catkin_ws/src/RosLecture/sixdofarm/urdf/sixdofarm.urdf" />
   <arg name="gui" default="True" />
   <param name="robot_description" textfile="$(arg model)" />
   <param name="use_gui" value="True"/>
