@@ -1,0 +1,19 @@
+<launch>
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="$(find sixdofarm_gazebo)/worlds/sixdofarm.world"/>
+  </include>
+
+  <arg name="model" default="$(find sixdofarm)/urdf/sixdofarm.urdf" />
+  <arg name="gui" default="True" />
+  <param name="robot_description" textfile="$(arg model)" />
+  <param name="use_gui" value="$(arg gui)"/>
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
+
+
+  <param name="robot_description" type="str" textfile="$(find sixdofarm)/urdf/sixdofarm.urdf"/>
+
+  <node name="spawn_urdf" pkg="gazebo_ros" type="spawn_model" args="-param robot_description -urdf -model sixdofarm" />
+
+
+</launch>
