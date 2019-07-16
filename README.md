@@ -1,5 +1,6 @@
 # ROSLecture
-元ページは、google siteの"https://sites.google.com/site/robotlabo/time-tracker/ros"をgithubにアップロードしたものです。
+元ページは、google siteの下記サイトをgithubにアップロードしたものです。
+https://sites.google.com/site/robotlabo/time-tracker/ros
 
 # ROSを使ったマニピュレーターの制御
 ６自由度ロボットアームを例に、マニピュレータの構成方法を説明する。
