@@ -11,6 +11,12 @@
     <color rgba="0.0 0.0 1.0 1.0"/>
   </material>
 
+  <link name="world"/>
+  <joint name="world2base" type="fixed">
+    <parent link="world"/>
+    <child link="base"/>
+  </joint>
+
   <link name="base"/>
   <joint name="fixed" type="fixed">
     <parent link="base"/>
@@ -46,6 +52,22 @@
     <limit effort="30" lower="-2.617" upper="2.617" velocity="1.571"/>
   </joint>
 
+  <gazebo reference="link1">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <transmission name="trans1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint1"> 
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor1">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+ 
+
+
   <!-- Link 2 -->
   <link name="link2">
     <collision>
@@ -74,6 +96,21 @@
     <axis xyz="0 1 0"/>
     <limit effort="30" lower="-2.617" upper="2.617" velocity="1.571"/>
   </joint>
+
+  <gazebo reference="link2">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <transmission name="trans1">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint2"> 
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor2">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
 
   <!-- Link 3 -->
   <link name="link3">
@@ -104,12 +141,27 @@
     <limit effort="30" lower="-2.617" upper="2.617" velocity="1.571"/>
   </joint>
 
+  <gazebo reference="link3">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <transmission name="trans3">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint3"> 
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor3">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
   <!-- Link 4 -->
   <link name="link4">
     <collision>
       <origin rpy="0 0 0" xyz="0 0 0.0"/>
       <geometry>
-        <box size="0.1 0.1 1"/>
+        <box size="0.05 0.1 0.05"/>
       </geometry>
     </collision>
     <visual>
@@ -132,6 +184,21 @@
     <axis xyz="0 1 0"/>
     <limit effort="30" lower="-2.617" upper="2.617" velocity="1.571"/>
   </joint>
+
+  <gazebo reference="link4">
+    <material>Gazebo/Red</material>
+  </gazebo>
+  <transmission name="trans4">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint4"> 
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor4">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
 
   <!-- Link 5 -->
   <link name="link5">
@@ -162,6 +229,21 @@
     <limit effort="30" lower="-2.617" upper="2.617" velocity="1.571"/>
   </joint>
 
+  <gazebo reference="link5">
+    <material>Gazebo/Green</material>
+  </gazebo>
+  <transmission name="trans5">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint5"> 
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor5">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
+
+
   <!-- Link 6 -->
   <link name="link6">
     <collision>
@@ -191,6 +273,19 @@
     <limit effort="30" lower="-2.617" upper="2.617" velocity="1.571"/>
   </joint>
 
+  <gazebo reference="link6">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <transmission name="trans6">
+    <type>transmission_interface/SimpleTransmission</type>
+    <joint name="joint6"> 
+      <hardwareInterface>EffortJointInterface</hardwareInterface>
+    </joint>
+    <actuator name="motor6">
+       <hardwareInterface>EffortJointInterface</hardwareInterface>
+      <mechanicalReduction>1</mechanicalReduction>
+    </actuator>
+  </transmission>
 
   <!-- Link 7 (end effector)-->
   <link name="link7">
@@ -213,5 +308,16 @@
       <inertia ixx="1.0" ixy="0.0" ixz="0.0" iyy="1.0" iyz="0.0" izz="1.0"/>
     </inertial>
   </link>
-</robot>
+  <gazebo reference="link7">
+    <material>Gazebo/Red</material>
+  </gazebo>
 
+
+  <gazebo>
+    <plugin name="gazebo_ros_control" filename="libgazebo_ros_control.so">
+      <robotNamespace>/sixdofarm</robotNamespace>
+    </plugin>
+  </gazebo>
+
+
+</robot>
