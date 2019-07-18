@@ -30,6 +30,8 @@ Rviz上で差動２輪移動ロボットのシミュレーション画面を立�
 １つ目のターミナル
 $ roslaunch diff_mobile_robot diff_mobile_robot.launch
 ２つ目のターミナル
+$ roslaunch diff_mobile_robot diff_mobile_gazebo.launch
+３つ目のターミナル
 $ rosrun diff_mobile_robot key_teleop.py 
 ```
 ２つ目のターミナルのコマンドを実行した画面。
