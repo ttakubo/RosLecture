@@ -244,7 +244,7 @@
       <publishWheelTF>false</publishWheelTF>
       <robotNamespace>/</robotNamespace>
       <publishTf>1</publishTf>
-      <publishWheelJointState>false</publishWheelJointState>
+      <publishWheelJointState>true</publishWheelJointState>
       <alwaysOn>true</alwaysOn>
       <updateRate>100.0</updateRate>
       <leftJoint>front_left_wheel_joint</leftJoint>
