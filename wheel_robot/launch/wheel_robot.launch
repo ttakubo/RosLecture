@@ -5,9 +5,9 @@
   <arg name="gui" default="true"/>
  
   <!-- We resume the logic in empty_world.launch, changing only the name of 
-    the world to be launched -->
+    the world to be launched "worlds/empty.world"-->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
-    <arg name="world_name" value="worlds/empty.world" />
+    <arg name="world_name" value="$(find wheel_robot)/worlds/wheel_robot.world" />
     <arg name="paused" value="$(arg paused)" />
     <arg name="debug" value="$(arg debug)" />
     <arg name="gui" value="$(arg gui)" />
