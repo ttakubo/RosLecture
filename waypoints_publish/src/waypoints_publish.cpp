@@ -145,7 +145,7 @@ private :
     move_base_msgs::MoveBaseGoal move_base_goal;
     
     move_base_goal.target_pose.header.stamp = ros::Time::now();
-    move_base_goal.target_pose.header.frame_id = "/map";
+    move_base_goal.target_pose.header.frame_id = "map";
     
     if(current_waypoint_ == waypoints_.end()-1) {
 
@@ -203,7 +203,7 @@ private :
     visualization_msgs::MarkerArray markers_array;
     for(int i=0; i < waypoints_.size(); i++){
       visualization_msgs::Marker marker, label;
-      marker.header.frame_id = "/map";
+      marker.header.frame_id = "map";
       marker.header.stamp = ros::Time::now();
       marker.scale.x = 0.2;
       marker.scale.y = 0.2;
