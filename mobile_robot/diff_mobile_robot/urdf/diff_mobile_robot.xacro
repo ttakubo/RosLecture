@@ -239,6 +239,8 @@
   <!-- Differential drive controller  -->
   <gazebo>
     <plugin name="differential_drive_controller" filename="libgazebo_ros_diff_drive.so">
+     <alwaysOn>true</alwaysOn>
+     <legacyMode>false</legacyMode>
 
       <rosDebugLevel>Debug</rosDebugLevel>
       <publishWheelTF>false</publishWheelTF>
@@ -256,8 +258,8 @@
       <wheelAcceleration>1.8</wheelAcceleration>
       <commandTopic>cmd_vel</commandTopic>
       <odometryFrame>odom</odometryFrame> 
-      <odometryTopic>odom</odometryTopic> 
-      <robotBaseFrame>base_footprint</robotBaseFrame>
+      <odometryTopic>odom_diffdrive</odometryTopic> 
+      <robotBaseFrame>base_link</robotBaseFrame>
     </plugin>
   </gazebo> 
 </robot>
