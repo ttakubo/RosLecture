@@ -3,7 +3,8 @@
   <arg name="paused" default="false"/>
   <arg name="debug" default="false"/>
   <arg name="gui" default="true"/>
- 
+  <arg name="show_rviz" default="true"/>
+
   <!-- We resume the logic in empty_world.launch, changing only the name of 
     the world to be launched "worlds/empty.world"-->
   <include file="$(find gazebo_ros)/launch/empty_world.launch">
@@ -29,4 +30,11 @@
   <!-- push robot_description to factory and spawn robot in gazebo -->
   <node name="wheel_robot_spawn" pkg="gazebo_ros" type="spawn_model" output="screen" 
     args="-urdf -param robot_description -model wheel_robot" />
+
+<!-- robot visualization in Rviz -->
+
+  <group if="$(arg show_rviz)">
+    <node name="rviz" pkg="rviz" type="rviz" output="screen" args="-d $(find wheel_robot)/launch/wheel_robot.rviz"/> 
+  </group>
+
 </launch>
