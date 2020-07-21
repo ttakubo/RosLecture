@@ -2,6 +2,22 @@
 元ページは、google siteの下記サイトをgithubにアップロードしたものです。
 https://sites.google.com/site/robotlabo/time-tracker/ros
 
+# 使い方
+自分のワークスペースの中のソースファイルのディレクトリにコピーしてから
+下記コマンドディレクトリ内にあるinstall_pkg.shを実行して必要なライブラリを
+インストールしてからcatkin_makeしてください．
+
+以下，ワークスペースが~/catkin_ws/の場合
+```bash
+$ cd ~/catkin_ws/src
+$ git clone  https://github.com/ttakubo/RosLecture.git
+$ cd RosLecture
+$ sh install_pkg.sh
+$ cd ~/catkin_ws && catkin_make
+```
+
+
+
 # ROSを使ったマニピュレーターの制御
 ６自由度ロボットアームを例に、マニピュレータの構成方法を説明する。
 ６自由度ロボットアームの構成例は下記の図の通り。
