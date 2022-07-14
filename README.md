@@ -1,6 +1,6 @@
 # ROSLecture
 元ページは、google siteの下記サイトをgithubにアップロードしたものです。
-https://sites.google.com/site/robotlabo/time-tracker/ros
+https://sites.google.com/site/robotlabo/ros
 
 # 使い方
 自分のワークスペースの中のソースファイルのディレクトリにコピーしてから
